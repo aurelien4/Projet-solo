@@ -1,0 +1,33 @@
+.title{
+	text-align: center;
+}
+img{
+	width: 100%;
+}
+body{
+	margin:0;
+	padding:0;
+}
+.firstrow{
+	margin-bottom: 5%;
+}
+legend{
+	text-align: center;
+}
+.form-block{
+}
+#news{
+	text-align: center;
+}
+.header{
+	background-color: #001;
+}
+#titleSite{
+	color:#F60A20;
+}
+a:hover{
+	text-decoration:none;
+}
+#menu{
+	color:white;
+}

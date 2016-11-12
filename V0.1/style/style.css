@@ -1,0 +1,82 @@
+*{
+    font-family: Helvetica, sans-serif;
+    margin:non;
+}
+h1, h3
+{
+    text-align:center;
+}
+h3
+{
+    background-color:black;
+    color:white;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+.container p
+{
+    background-color:#CCCCCC;
+    margin-top:0px;
+}
+.container
+{
+    width:70%;
+    margin:auto;
+}
+
+a
+{
+    text-decoration: none;
+    color: blue;
+}
+#button {
+    color:white;
+    background-color:#100;
+    height:20px;
+    width:5%;
+    text-align: center;
+}
+#supr{
+    margin-left: 35%;
+}
+#editer{
+    margin-left: 36%;
+}
+#header{
+    
+    padding-left: 0%;
+    background-color: #111;
+}
+
+a:hover{
+    text-decoration:none;
+}
+img{
+    width:100%;
+}
+
+#Titre{
+    font-size: 40px;
+    padding-right: 28%;
+    padding-left:10%;
+}
+#Titre:hover{
+    text-decoration: none;
+}
+#formulaireRecherche{
+    border:1px solid black;
+    height: 150px;
+    padding:8% 8% 8% 8%;
+    background-color: #111;
+}
+#boutonValid{
+    margin-left:38%;
+    margin-top: 5%;
+}
+.containerins{
+    width:50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 20%;
+}
+
