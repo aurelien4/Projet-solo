@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Actu manga</title>
+	<title>Blog PHP</title>
 	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!-- bootstap -->
@@ -21,7 +21,6 @@
 		$article = $dbh->query('SELECT * FROM articles');
 		$donnees = $article->fetch();
 	}
-
 		include_once('include/header.php');
 		if(isset($_SESSION['ID']) && isset($donnee['ID_user'])){
  		if($_SESSION['ID'] == $donnee['ID_user']){

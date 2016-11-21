@@ -43,7 +43,7 @@
     Action <span class="caret"></span>
   </button>
   <ul class="dropdown-menu">
-            <form class="form-inline" action="loginSQL.php" method="POST">
+            <form class="form-inline" id="bloqueForm">
         <div class="form-group">
           <input class="form-control" type="text" placeholder="Login" name="login" "></input>
         </div>

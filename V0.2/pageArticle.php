@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Affichage article</title>
 	<!-- jquery -->
@@ -22,7 +22,7 @@
 		?>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-offset-2 col-md-8">
+				<div class="col-md-offset-2 col-md-8 col-xs-12">
 					<div class="row">
 						<div class="col-md-offset-1 col-md-10">
 							<h1><?php echo $data['titre']; ?></h1>
@@ -53,54 +53,46 @@
 		?>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-offset-3 col-md-6">
+				<div class="col-md-offset-3 col-md-6 col-xs-12">
 					<div class="row">
-						<div class="col-md-offset-1 col-md-10">
-							<?php echo "<span>" . $affiche_com['pseudo'] . "</span>: ";
-								  echo $affiche_com['commentaire'];
-								if(isset($_SESSION['mail'])){
-									$req = $dbh->prepare('SELECT * FROM commentaires WHERE ID_article = :ID AND pseudo = :aut');
-									$req->execute(array(
-										'ID'=>$_GET['billet'],
-										'aut'=> $_SESSION['pseudo']
-										));
-									$info = $req->fetch();
-									?>
-									<?php
-									$admin = $dbh->prepare('SELECT * FROM super_users WHERE ID_user = ?');
-									$admin->execute(array($_SESSION['ID']));
-									$dataID = $admin->fetch();
-									if($_SESSION['ID'] == $dataID['ID_user']){?>
-									<a href='EditeCom.php?ID_com=<?php echo $info['ID'];?>' class='btn btn-default'>Editer</a>
-									<a href="suprComSQL.php?ID_com=<?php echo $info['ID']; ?>" class="btn btn-default">delete</a>
-							<?php
-									}
-								}
-
+						<div class="col-sm-offset-1 col-sm-10">	
+						<?php echo "<span>" . $affiche_com['pseudo'] . "</span>: ";
+							echo $affiche_com['commentaire'];
+								
 							?>
 						</div>
 					</div>
 				</div>
-
-	<?php } if(isset($info['pseudo'])){if($_SESSION['pseudo'] == $info['pseudo']){
-			if($_SESSION['ID'] != $dataID['ID_user']){
-			?>
-			<div class="col-md-2">
-
-			<a href='EditeCom.php?ID_com=<?php echo $info['ID'];?>' class='btn btn-default'>Editer</a>
-
+				<div class="col-md-2">
+					<?php //}
+					 $user = $dbh->prepare('SELECT * FROM users WHERE pseudo = ?');
+								$user->execute(array($affiche_com['pseudo']));
+								$data = $user->fetch();
+					 if(isset($_SESSION['ID']) AND isset($_SESSION['mail'])){
+						$admin = $dbh->prepare('SELECT * FROM super_users WHERE ID_user = ?');
+						$admin->execute(array($_SESSION['ID']));
+						$verif = $admin->fetch();
+						if(isset($verif['ID_user']) AND $verif['ID_user'] == $_SESSION['ID'] AND $data['pseudo'] == $affiche_com['pseudo']  ){?>
+						<a href='EditeCom.php?ID_com=<?php echo $affiche_com['ID_commentaire'];?>' class='btn btn-default'>Editer</a>
+					 	<a href='suprComSQL.php?ID_com=<?php echo $affiche_com['ID_commentaire'];?>' class='btn btn-default
+						'>delete</a>
+					<?php }
+					 if($_SESSION['pseudo'] == $affiche_com['pseudo'] AND $verif['ID_user'] != $_SESSION['ID']){?>
+					<a href="EditeCom.php?ID_com=<?php echo $affiche_com['ID_commentaire'];?>" class="btn btn-default">Editer</a>
+					
+					<?php	}} ?> 
+				</div>
 			</div>
 		</div>
-		</div>
 
-			<?php	}}}
+	<?php }
 		if(isset($_SESSION['mail'])){
 			$ID = $_GET['billet'];
 			?>
-			<div class="row"><div class="col-md-offset-3 col-md-6">
+			<div class="row"><div class="col-md-offset-3 col-md-6 col-xs-12">
 			<form action="comSQL.php?ID=<?php echo $ID; ?>" method="POST">
 				<label spellcheck="true">Commenter</label>
-				<textarea class="form-control" rows="4" name="commentaire" ></textarea>
+				<textarea class="form-control" rows="4" name="commentaire"></textarea>
 				<button class="btn btn-default">Valider</button>
 			</form>
 			</div>

@@ -79,6 +79,27 @@ function Ajaxs(){
 	request.open('GET', 'articleActif.php', true);
 	request.send();
 }
+function formco(){
+	var stop = document.getElementById('bloqueForm');
+	stop.preventDefault();
+	stop.addEventListener('click', login, true);
+}
+function login(){
+	var request = new XMLHttpRequest();
+	var form = document.getElementsByTagName('input');
+	var pack = "log="+form[0].value+"&pass="+form[1].value;
+	console.log(pack);
+	request.onerror = function(event){
+		console.log(event);
+	}
+	request.onload = function(){
+		var return_data = this.responseText;
+		document.getelementById('').innerHTML = return_data;
+	}
+	request.open('POST', 'loginSQL.php', true);
+	request.setRequestHeader('Content-type',"application/x-www-form-urlencoded");
+	request.send();
+}
 getButton();
 Newinscri();
 getNewArticle();

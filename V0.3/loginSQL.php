@@ -12,12 +12,12 @@ include_once('include/fonctionUtile.php');
 			$_SESSION['ID'] = $verif['ID'];
 			$_SESSION['mail'] = $verif['email'];
 			$_SESSION['pseudo'] = $verif['pseudo'];
-			go('index.php');
-
+			// go('index.php');
+			echo "Bonjour ". $_verif['pseudo'];
 		}else{
-			go('index.php?error=true');
+			// go('index.php?error=true');
 		}
 	}else{
-		go('index.php');
+		// go('index.php');
 	}
  ?>

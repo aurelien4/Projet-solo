@@ -14,7 +14,7 @@
 <body>
 <?php include_once('include/header.php') ?>
 
-<form action="newArticleSQL.php" method="POST" style="width: 60%; margin-left:20%">
+<form action="newArticleSQL.php" method="POST" style="width: 60%; margin-left:20%; z-index: 0">
  	<fieldset>
  		<label>Titre</label>
  		<input type="text" class="form-control" name="titre" placeholder="Titre de l'article">

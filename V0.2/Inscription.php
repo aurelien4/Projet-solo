@@ -14,7 +14,7 @@
 	<?php include_once('include/header.php') ?>
 <div class="container">
 <div class="row">
-	<div class="col-md-offset-3 col-md-6">
+	<div class="col-md-offset-3 col-md-6 col-xs-12">
 	<form class="form-block" id="form" action="inscriptionSQL.php" method="POST">
 		<fieldset>
 		<legend>Inscription <p id="erreur"></p></legend>

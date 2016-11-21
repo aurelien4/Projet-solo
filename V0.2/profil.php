@@ -12,7 +12,7 @@ include_once "include/connexion_base.php";
 	<!-- bootstap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjmdfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
@@ -24,10 +24,10 @@ include_once "include/connexion_base.php";
 		$donnee = $donneeUser->fetch();
 	?>
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
-			<div class="row" style="background-color:yellow;">
+		<div class="col-md-offset-2 col-md-8 col-xs-12" >
+			<div class="row">
 				<div class="col-md-9" >
-							<h1>Profil des color.</h1>
+							<h1>Profil</h1>
 
 				</div>
 				<div class="col-md-3"><a href="UpdateProfil.php" class="btn btn-default">Update Profil</a></div>
@@ -41,7 +41,7 @@ include_once "include/connexion_base.php";
 				<div class="col-md-offset-1 col-md-3">Password: Ou pas! </div>
 			</div>
 			<div class="row">
-				<div class="col-md-12" style="background-color: red;"><h4>Check</h4></div>
+				<div class="col-md-12"><h4>Check</h4></div>
 			</div>
 			<div class="row">
 				<div class="col-md-5">

@@ -32,4 +32,15 @@ a:hover{
 h1{
 	font-family :ARIAL, sans-serif;
 }
+#headerCom{
+	text-align: center;
+	border:1px solid white;
+	border-radius: 20%;
 
+}
+#date{
+	text-align: left;	
+}
+#header{
+	margin-bottom:5%;
+}

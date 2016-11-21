@@ -1,15 +1,12 @@
-	<nav class="navbar navbar-default" >
+	<nav class="navbar navbar-default" id="head" >
   <div class="container-fluid">
   <div class="row" >
   	<div class="col-sm-offset-3 col-sm-4">
-  	 <a href="index.php"><h1>Actu Manga</h1></a>
-    <p id="erreur"></p>
+    <h1>Blog Php</h1>
+    <p id="erreur "></p><p id="news"></p>
   	</div>	<!-- col-sm-offset-3 -->
   	<div class="col-sm-5">
-      <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for..." id="testtest">
-          
-              </div>
+
       <?php if(isset($_SESSION['mail'])){ ?>
 
         
@@ -22,6 +19,10 @@
 				<span class="caret"></span></a>
           <ul class="dropdown-menu">
           	<li><a href="profil.php">Gérer mon profil</a></li>
+          <?php 
+           if(isset($_SESSION['mail'])){if(isset($donnee['ID_user']) AND $_SESSION['ID'] == $donnee['ID_user']){ ?>
+            <li><a href="listeDesMembre.php">Membres</a></li>
+          <?php }} ?>
           	<li><a href="destroy.php">Déconnexion</a></li>
           </ul><!-- dropDown -->
         </li>
@@ -63,5 +64,9 @@
   </div> <!-- row -->
     </div><!-- /.navbar-collapse -->
 </nav>
+      <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." id="searchBar">
+          
+              </div>
 <div id="header"></div>
 <!-- Split button -->

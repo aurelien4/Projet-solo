@@ -15,31 +15,37 @@
 					$tab = $dernierMur->fetch();
 				if($_POST['login'] != $tab['email'] AND $_POST['pseudo'] != $tab['pseudo']){
 
-				$mail = $_POST['login'];
-				$pseudo = $_POST['pseudo'];
-				$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+					$mail = $_POST['login'];
+					$pseudo = $_POST['pseudo'];
+					$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
 					$inscription = $dbh->prepare('INSERT INTO users (email, pseudo, password, date_inscription) VALUES (:mail, :pseudo, :password, NOW())');
 					$inscription->bindParam('mail', $mail, PDO::PARAM_STR);
 					$inscription->bindParam('pseudo', $pseudo, PDO::PARAM_STR);
 					$inscription->bindParam('password', $password, PDO::PARAM_STR);
-					$inscription->execute();
-					go('Inscription.php?win=true');
+					$test = $inscription->execute();
+					var_dump($test);
+					if($test){
+						echo 'là';
+					}else{
+						echo 'ici';
+					}
+					// go('Inscription.php?win=true');
 				}else{
-					go('Inscription.php?already=true');
+					// go('Inscription.php?already=true');
 				}
 				}else{
-					go('Inscription.php?errors=true');
+					// go('Inscription.php?errors=true');
 				}
 
 			}else{
-				go('Inscription.php?errors=true');
+				// go('Inscription.php?errors=true');
 			}
 		}else{
-			go('Inscription.php?errors=true');
+			// go('Inscription.php?errors=true');
 		}
 	}else{
 		echo $_POST['login'];
-		go('Inscription.php?errors=true');
+		// go('Inscription.php?errors=true');
 	}
  ?>

@@ -25,20 +25,21 @@
 		$stmt->bindParam(':auteur', $auteur, PDO::PARAM_STR);
 		$stmt->bindParam('image', $image, PDO::PARAM_STR);
 		$stmt->bindParam('nbCom', $nbcom, PDO::PARAM_INT);
-		$stmt->execute();
-		go('index.php?new=true');
+		$test = $stmt->execute();
+		var_dump($test);
+		// go('index.php?new=true');
 
 					}else{
-					go('index.php?admin=false');
+					// go('index.php?admin=false');
 					}
 				}else{
-					go('index.php?new=false');
+					// go('index.php?new=false');
 				}
 			}else{
-				go('index.php?new=false');
+				// go('index.php?new=false');
 			}
 
 	}else{
-		go('index.php?erros=true');
+		// go('index.php?erros=true');
 	}
  ?>

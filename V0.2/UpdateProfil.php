@@ -16,7 +16,7 @@
 	
 	<div class="container">
 	<div class="row">
-		<div class="col-sm-offset-3 col-sm-6">
+		<div class="col-sm-offset-3 col-sm-6 col-xs-12">
 			<legend>Update Profil</legend>
 			<form action="updateProfilSQL.php" method="POST">
 	
